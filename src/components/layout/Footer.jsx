@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-surface py-12">
-      <div className="container mx-auto px-4 md:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-start gap-8">
+
+          {/* Left - Brand (takes more space) */}
+          <div className="space-y-4 lg:flex-[2] lg:text-left">
             <h3 className="text-2xl font-bold text-text-primary">NoteBean</h3>
-            <p className="text-text-secondary max-w-sm">
+            <p className="text-text-secondary max-w-sm mx-auto lg:mx-0">
               Your intelligent companion for capturing ideas, organizing thoughts, and boosting productivity.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center lg:justify-start">
               <a href="#" className="text-primary hover:text-secondary transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -28,45 +31,36 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
-          <div className="space-y-4">
-            <h4 className="font-semibold text-text-primary">Product</h4>
-            <ul className="space-y-2">
-              <li><a href="#features" className="text-text-secondary hover:text-primary transition-colors">Features</a></li>
-              <li><a href="#pricing" className="text-text-secondary hover:text-primary transition-colors">Pricing</a></li>
-              <li><a href="#security" className="text-text-secondary hover:text-primary transition-colors">Security</a></li>
-              <li><a href="#integrations" className="text-text-secondary hover:text-primary transition-colors">Integrations</a></li>
-            </ul>
+
+          {/* Right - 3 link columns */}
+          <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-24">
+            <div className="space-y-4">
+              <h4 className="font-semibold text-text-primary">Product</h4>
+              <ul className="space-y-2">
+                <li><a href="#features" className="text-text-secondary hover:text-primary transition-colors">Features</a></li>
+                <li><a href="#pricing" className="text-text-secondary hover:text-primary transition-colors">Pricing</a></li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-semibold text-text-primary">Support</h4>
+              <ul className="space-y-2">
+                <li><Link to="/contact" className="text-text-secondary hover:text-primary transition-colors">Contact</Link></li>
+                <li><Link to="/privacy" className="text-text-secondary hover:text-primary transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="text-text-secondary hover:text-primary transition-colors">Terms of Service</Link></li>
+              </ul>
+            </div>
           </div>
-          
-          <div className="space-y-4">
-            <h4 className="font-semibold text-text-primary">Company</h4>
-            <ul className="space-y-2">
-              <li><a href="#about" className="text-text-secondary hover:text-primary transition-colors">About</a></li>
-              <li><a href="#blog" className="text-text-secondary hover:text-primary transition-colors">Blog</a></li>
-              <li><a href="#careers" className="text-text-secondary hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="#press" className="text-text-secondary hover:text-primary transition-colors">Press</a></li>
-            </ul>
-          </div>
-          
-          <div className="space-y-4">
-            <h4 className="font-semibold text-text-primary">Support</h4>
-            <ul className="space-y-2">
-              <li><a href="#help" className="text-text-secondary hover:text-primary transition-colors">Help Center</a></li>
-              <li><a href="#contact" className="text-text-secondary hover:text-primary transition-colors">Contact</a></li>
-              <li><a href="#privacy" className="text-text-secondary hover:text-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#terms" className="text-text-secondary hover:text-primary transition-colors">Terms of Service</a></li>
-            </ul>
-          </div>
+
         </div>
-        
+
         <div className="border-t border-surface mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-text-secondary text-sm">
             &copy; {new Date().getFullYear()} NoteBean Inc. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#privacy" className="text-text-secondary hover:text-primary transition-colors">Privacy</a>
-            <a href="#terms" className="text-text-secondary hover:text-primary transition-colors">Terms</a>
+            <Link to="/privacy" className="text-text-secondary hover:text-primary transition-colors">Privacy</Link>
+            <Link to="/terms" className="text-text-secondary hover:text-primary transition-colors">Terms</Link>
             <a href="#cookies" className="text-text-secondary hover:text-primary transition-colors">Cookies</a>
           </div>
         </div>

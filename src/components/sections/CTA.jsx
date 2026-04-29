@@ -30,15 +30,15 @@ const CTA = () => {
       {/* Background with accent color */}
       <div className="absolute inset-0 bg-accent z-0" />
 
-      <div className="relative container mx-auto px-4 md:px-0 z-10">
+      <div className="relative container mx-auto px-6 lg:px-8 z-10 pt-10">
         <div className="flex flex-col lg:flex-row items-center justify-around gap-12 ">
           
           {/* Left Content */}
-          <div className="flex-1 max-w-2xl text-center lg:text-left">
+          <div className="flex-1 max-w-2xl text-center lg:text-left px-6 lg:px-0">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-text-primary">
-              Your Notes, Your Way.
+              Your Notes,<br /> Your Way.
             </h2>
-            <p className="text-lg md:text-xl opacity-90 mb-8 leading-relaxed text-text-primary/80 max-w-lg mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl opacity-90 mb-8 leading-relaxed text-text-primary/80 max-w-lg mx-auto lg:mx-0 px-4 lg:px-0">
               Capture ideas instantly, organize thoughts beautifully, and access everything securely. The perfect note-taking companion for your digital life.
             </p>
 
@@ -73,11 +73,11 @@ const CTA = () => {
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 md:gap-12">
+            <div className="mt-12 flex items-start justify-center lg:justify-start gap-8 md:gap-12">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Users className="w-5 h-5 text-primary mr-2" />
-                  <div className="text-3xl font-bold text-text-primary">10K+</div>
+                  <div className="text-xl md:text-3xl font-bold text-text-primary">10K+</div>
                 </div>
                 <div className="text-sm text-text-primary/70">Happy Users</div>
               </div>
@@ -85,7 +85,7 @@ const CTA = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Star className="w-5 h-5 text-primary mr-2" />
-                  <div className="text-3xl font-bold text-text-primary">4.8★</div>
+                  <div className="text-xl md:text-3xl font-bold text-text-primary">4.8★</div>
                 </div>
                 <div className="text-sm text-text-primary/70">App Rating</div>
               </div>
@@ -93,7 +93,7 @@ const CTA = () => {
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Headphones className="w-5 h-5 text-primary mr-2" />
-                  <div className="text-3xl font-bold text-text-primary">24/7</div>
+                  <div className="text-xl md:text-3xl font-bold text-text-primary">24/7</div>
                 </div>
                 <div className="text-sm text-text-primary/70">Support</div>
               </div>
