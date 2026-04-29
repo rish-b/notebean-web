@@ -41,7 +41,7 @@ const Hero = () => {
       />
 
       {/* Left content */}
-      <div className="relative container mx-auto px-6 h-full flex flex-col lg:flex-row items-center justify-center lg:justify-start text-center lg:text-left">
+      <div className="relative container mx-auto px-4 md:px-0 h-full flex flex-col lg:flex-row items-center justify-center lg:justify-start text-center lg:text-left">
         <div className="flex-1 max-w-2xl text-text-primary flex flex-col items-center lg:items-start">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
             Your Brain, Optimized.
@@ -51,7 +51,7 @@ const Hero = () => {
             your thoughts in a beautiful, unified workspace.
           </p>
 
-          <div className="flex items-center justify-center lg:justify-start gap-4 flex-wrap">
+          <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
             {/* iOS Button */}
             <a
               href="#"

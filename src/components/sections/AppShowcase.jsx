@@ -1,52 +1,29 @@
-import { NotebookPen, FolderOpen, Bell, Wifi } from 'lucide-react';
 import featBg from '../../assets/images/website-bg-feat.svg';
 import sidePhone from '../../assets/images/side-phone.png';
+import { highlights } from '../../constant';
 
-const highlights = [
-  {
-    Icon: NotebookPen,
-    title: 'Write, Sketch & Create',
-    description: 'Capture every thought with rich text notes, hand-drawn sketches, and custom stickers — all in one beautiful workspace.',
-  },
-  {
-    Icon: FolderOpen,
-    title: 'Organize Effortlessly',
-    description: 'Search, sort, tag, and categorize your notes into smart collections so you always find what you need instantly.',
-  },
-  {
-    Icon: Bell,
-    title: 'Smart Reminders & Widgets',
-    description: 'Never forget an idea. Set reminders directly on your notes and access them from handy home-screen widgets.',
-  },
-  {
-    Icon: Wifi,
-    title: 'Works Offline, Syncs Everywhere',
-    description: 'Your notes are always available — even without internet. Auto-sync keeps every device perfectly up to date.',
-  },
-];
 
 const AppShowcase = () => {
   return (
-    <section className="relative" id="app-showcase">
+    <section className="relative bg-accent lg:bg-transparent overflow-hidden" id="app-showcase">
       {/* Background SVG */}
       <img
         src={featBg}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-bottom z-0 pointer-events-none select-none"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-top z-0 pointer-events-none select-none"
       />
 
-      <div className="relative z-10 container mx-auto py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
-
+      <div className="relative z-10 container mx-auto px-8 md:px-4 py-8 lg:py-16">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
           {/* ── LEFT: Text content ── */}
-          <div className="flex-1 max-w-xl">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-text-primary leading-tight mb-6">
+          <div className="flex-1 max-w-xl lg:mt-16">
+            <h2 className="text-center lg:text-left text-4xl md:text-5xl font-extrabold text-text-primary leading-tight mb-6">
               Use Notebean on{' '}
               <span className="text-primary">Android or iOS</span>{' '}
               to Manage Everything
             </h2>
-            <p className="text-text-secondary mb-10 text-base leading-relaxed">
+            <p className="text-center lg:text-left text-text-secondary mb-10 text-base leading-relaxed">
               Whether you are on your phone commuting, at your desk, or offline — 
               Notebean keeps your thoughts organised and beautiful across every device.
             </p>
@@ -67,32 +44,32 @@ const AppShowcase = () => {
             </ul>
           </div>
 
-          {/* ── RIGHT: Two upright phones, side by side, back larger ── */}
-          <div className="flex-1 relative flex items-end justify-end min-h-[450px] lg:min-h-[580px]">
-            {/* Back phone — larger, behind */}
-            <img
-              src={sidePhone}
-              alt="Notebean app screen"
-              className="absolute object-contain drop-shadow-2xl"
-              style={{
-                width: '280px',
-                right: '6%',
-                bottom: '0',
-                zIndex: 1,
-              }}
-            />
-            {/* Front phone — smaller, in front */}
-            <img
-              src={sidePhone}
-              alt="Notebean app screen"
-              className="absolute object-contain drop-shadow-2xl"
-              style={{
-                width: '230px',
-                right: '20%',
-                top: '1%',
-                zIndex: 2,
-              }}
-            />
+          {/* ── RIGHT: Two upright phones ── */}
+          <div className="flex-1 flex items-end justify-center mb-6 lg:mb-0 lg:mt-0 min-h-[300px] lg:min-h-[580px]">
+            <div className="relative">
+              {/* Big phone — base element */}
+              <img
+                src={sidePhone}
+                alt="Notebean app screen"
+                className="object-contain drop-shadow-2xl relative"
+                style={{
+                  width: 'clamp(200px, 40vw, 230px)',
+                  zIndex: 1,
+                }}
+              />
+              {/* Small phone — absolutely placed, right edge at big phone's center, bottom slightly lower */}
+              <img
+                src={sidePhone}
+                alt="Notebean app screen"
+                className="object-contain drop-shadow-2xl absolute"
+                style={{
+                  width: 'clamp(160px, 32vw, 180px)',
+                  bottom: '-12px',
+                  right: '50%',
+                  zIndex: 2,
+                }}
+              />
+            </div>
           </div>
 
         </div>

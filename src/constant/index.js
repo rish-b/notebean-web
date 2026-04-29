@@ -1,4 +1,4 @@
-import { Bell, FilePen, Image as ImageIcon, Laptop, Layout, ListChecks, Moon, Palette, PenSquare, Radio, RefreshCw, Search, ShieldOff, Smartphone, Smile, Sparkles, Tablet, Trophy, WifiOff } from "lucide-react";
+import { Bell, FilePen, Image as ImageIcon, Laptop, Layout, ListChecks, Moon, Palette, PenSquare, Radio, RefreshCw, RefreshCwIcon, Search, ShieldOff, Smartphone, SmartphoneIcon, Smile, Sparkles, Tablet, Trophy, WifiOff, WifiOffIcon } from "lucide-react";
 
 export const features = [
 // ... (rest of the features array)
@@ -106,4 +106,25 @@ export const deviceItems = [
   { Icon: Smartphone, label: 'Phone' },
   { Icon: Laptop, label: 'Laptop' },
   { Icon: Tablet, label: 'Tablet' },
+];
+
+export const highlights = [
+  {
+    Icon: WifiOffIcon,
+    title: 'Works Offline, Always',
+    description:
+      'No Wi-Fi? No problem. Jot down ideas anywhere and Notebean syncs the moment you`re back online.',
+  },
+  {
+    Icon: SmartphoneIcon,
+    title: 'Feels at Home on Any Screen',
+    description:
+      'Designed from the ground up for mobile, with gestures, widgets, and a UI that feels native on both Android and iOS.',
+  },
+  {
+    Icon: RefreshCwIcon,
+    title: 'Picks Up Where You Left Off',
+    description:
+      'Switch devices mid-thought. Auto Sync keeps every word, sketch, and sticky note perfectly in step.',
+  },
 ];
