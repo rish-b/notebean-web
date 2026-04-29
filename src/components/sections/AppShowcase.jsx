@@ -2,7 +2,6 @@ import featBg from '../../assets/images/website-bg-feat.svg';
 import sidePhone from '../../assets/images/side-phone.png';
 import { highlights } from '../../constant';
 
-
 const AppShowcase = () => {
   return (
     <section className="relative bg-accent lg:bg-transparent overflow-hidden" id="app-showcase">
@@ -17,20 +16,20 @@ const AppShowcase = () => {
       <div className="relative z-10 container mx-auto px-8 md:px-4 py-8 lg:py-16">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
           {/* ── LEFT: Text content ── */}
-          <div className="flex-1 max-w-xl lg:mt-16">
+          <div className="flex-1 max-w-xl lg:mt-16 lg:mx-0 mx-8">
             <h2 className="text-center lg:text-left text-4xl md:text-5xl font-extrabold text-text-primary leading-tight mb-6">
               Use Notebean on{' '}
               <span className="text-primary">Android or iOS</span>{' '}
               to Manage Everything
             </h2>
-            <p className="text-center lg:text-left text-text-secondary mb-10 text-base leading-relaxed">
+            <p className="text-center lg:text-left text-text-secondary mb-10">
               Whether you are on your phone commuting, at your desk, or offline — 
               Notebean keeps your thoughts organised and beautiful across every device.
             </p>
 
-            <ul className="space-y-7">
+            <ul className="space-y-2">
               {highlights.map(({ Icon, title, description }) => (
-                <li key={title} className="flex items-start gap-5">
+                <li key={title} className="flex items-start gap-3">
                   {/* Icon bubble */}
                   <div className="shrink-0 w-12 h-12 rounded-2xl bg-white shadow-md flex items-center justify-center text-primary">
                     <Icon size={22} strokeWidth={1.8} />
