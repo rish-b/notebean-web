@@ -21,8 +21,9 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 py-16 lg:px-8 max-w-6xl pt-32">
-      <div className="text-center mb-16">
+    <div className="min-h-screen w-full bg-white">
+      <div className="container mx-auto px-8 py-16 lg:px-8 max-w-3xl pt-32">
+        <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">Get in Touch</h1>
         <p className="text-lg text-text-secondary max-w-2xl mx-auto">
           Have a question about NoteBean or need support? Our team is here to help. 
@@ -30,9 +31,9 @@ const ContactPage = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-center w-full gap-4">
         {/* Contact Info */}
-        <div className="space-y-8">
+          <div className="space-y-8">
           <div>
             <h3 className="text-2xl font-semibold text-text-primary mb-4">Contact Information</h3>
             <p className="text-text-secondary mb-6">
@@ -49,7 +50,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <h4 className="text-lg font-medium text-text-primary">Email</h4>
-                <p className="text-text-secondary">support@notebean.com</p>
+                  <p className="text-text-secondary">organimind8@gmail.com</p>
               </div>
             </div>
 
@@ -62,7 +63,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <h4 className="text-lg font-medium text-text-primary">Office</h4>
-                <p className="text-text-secondary">123 Productivity Way<br />San Francisco, CA 94105</p>
+                  <p className="text-text-secondary">Bhavnagar, Gujarat 364001</p>
               </div>
             </div>
             
@@ -74,14 +75,14 @@ const ContactPage = () => {
               </div>
               <div>
                 <h4 className="text-lg font-medium text-text-primary">Phone</h4>
-                <p className="text-text-secondary">+1 (555) 123-4567</p>
+                  <p className="text-text-secondary">+91 9913863602</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-surface rounded-2xl p-8 border border-gray-200 shadow-sm">
+          <div className="bg-gradient-to-br from-accent/80 to-accent/10 rounded-2xl p-8 shadow-md">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">Full Name</label>
@@ -92,7 +93,7 @@ const ContactPage = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors bg-white text-text-primary"
+                  className="w-full px-4 py-3 rounded-xl border ring-2 ring-primary/20 border-primary outline-none transition-colors bg-transparent text-text-primary placeholder:text-white"
                 placeholder="John Doe"
               />
             </div>
@@ -106,7 +107,7 @@ const ContactPage = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors bg-white text-text-primary"
+                  className="w-full px-4 py-3 rounded-xl border ring-2 ring-primary/20 border-primary outline-none transition-colors bg-transparent text-text-primary placeholder:text-white"
                 placeholder="john@example.com"
               />
             </div>
@@ -120,7 +121,7 @@ const ContactPage = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors bg-white text-text-primary"
+                  className="w-full px-4 py-3 rounded-xl border ring-2 ring-primary/20 border-primary outline-none transition-colors bg-transparent text-text-primary placeholder:text-white"
                 placeholder="How can we help?"
               />
             </div>
@@ -134,7 +135,7 @@ const ContactPage = () => {
                 onChange={handleChange}
                 required
                 rows="4"
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors resize-none bg-white text-text-primary"
+                  className="w-full px-4 py-3 rounded-xl border ring-2 ring-primary/20 border-primary outline-none transition-colors bg-transparent text-text-primary placeholder:text-white"
                 placeholder="Tell us more about your inquiry..."
               ></textarea>
             </div>
@@ -148,6 +149,7 @@ const ContactPage = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };
