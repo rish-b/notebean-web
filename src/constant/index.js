@@ -1,4 +1,4 @@
-import { Bell, FilePen, Image as ImageIcon, Laptop, Layout, ListChecks, Moon, Palette, PenSquare, Radio, RefreshCw, RefreshCwIcon, Search, ShieldOff, Smartphone, SmartphoneIcon, Smile, Sparkles, Tablet, Trophy, WifiOff, WifiOffIcon } from "lucide-react";
+import { Bell, FilePen, Image as ImageIcon, Laptop, Layout, ListChecks, Mail, MapPin, Moon, Palette, PenSquare, Phone, Radio, RefreshCw, RefreshCwIcon, Search, ShieldOff, Smartphone, SmartphoneIcon, Smile, Sparkles, Tablet, Trophy, WifiOff, WifiOffIcon } from "lucide-react";
 
 export const features = [
 // ... (rest of the features array)
@@ -182,5 +182,23 @@ export const plans = [
     {
       question: 'Do you offer a student discount?',
       answer: 'Yes! Students with a valid .edu email address can get 50% off our annual Pro plan. Contact our support team to apply.',
+    },
+  ];
+
+   export const contactInfo = [
+    {
+      icon: Mail,
+      title: 'Email',
+      detail: 'organimind8@gmail.com',
+    },
+    {
+      icon: MapPin,
+      title: 'Office',
+      detail: 'Bhavnagar, Gujarat 364001',
+    },
+    {
+      icon: Phone,
+      title: 'Phone',
+      detail: '+91 9913863602',
     },
   ];
