@@ -1,60 +1,85 @@
-import React from 'react';
+import { privacyPolicy } from '../constant/legal';
 
 const PrivacyPolicyPage = () => {
+  const scrollToSection = (e, slug) => {
+    e.preventDefault();
+    const element = document.getElementById(slug);
+    if (element) {
+      const offset = 100; // Account for fixed navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div className="container mx-auto px-6 py-16 lg:px-8 max-w-4xl pt-32">
-      <h1 className="text-4xl font-bold text-text-primary mb-8">Privacy Policy</h1>
-      
-      <div className="prose prose-lg text-text-secondary">
-        <p className="mb-6">Last updated: {new Date().toLocaleDateString()}</p>
-        
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">1. Introduction</h2>
-          <p className="mb-4">
-            Welcome to NoteBean. We respect your privacy and are committed to protecting your personal data. 
-            This privacy policy will inform you as to how we look after your personal data when you visit our 
-            website and tell you about your privacy rights and how the law protects you.
-          </p>
-        </section>
+    <div className="pt-32 bg-accent w-full min-h-screen">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">Privacy Policy</h1>
+        <p className="text-lg text-text-secondary max-w-2xl mx-auto px-6">
+          This Privacy Policy outlines how we collect, use, share, and protect your information on our website and services.
+        </p>
+      </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">2. The Data We Collect</h2>
-          <p className="mb-4">
-            We may collect, use, store and transfer different kinds of personal data about you which we have grouped together follows:
-          </p>
-          <ul className="list-disc pl-6 mb-4 space-y-2">
-            <li><strong>Identity Data</strong> includes first name, last name, username or similar identifier.</li>
-            <li><strong>Contact Data</strong> includes email address and telephone numbers.</li>
-            <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location.</li>
-            <li><strong>Usage Data</strong> includes information about how you use our website, products and services.</li>
-          </ul>
-        </section>
+      <div className='bg-white rounded-t-[3rem] shadow-2xl overflow-visible'>
+        <div className="container mx-auto px-6 py-16 lg:px-8 max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-12 relative ">
+            
+            {/* Main Content */}
+            <div className="flex-1 text-text-secondary">
+              <p className="mb-8 font-medium italic">Last updated: {privacyPolicy.lastUpdated}</p>
+              
+              {privacyPolicy.sections.map((section) => (
+                <section key={section.id} id={section.slug} className="mb-12 scroll-mt-32">
+                  <h2 className="text-2xl font-bold text-text-primary mb-5">{section.title}</h2>
+                  <p className="mb-4 leading-relaxed">{section.content}</p>
+                  {section.list && (
+                    <ul className="list-disc pl-6 mb-4 space-y-3">
+                      {section.list.map((item, index) => (
+                        <li key={index} className="leading-relaxed">
+                          {typeof item === 'string' ? (
+                            item
+                          ) : (
+                            <>
+                              <strong className="text-text-primary">{item.label}:</strong> {item.description}
+                            </>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              ))}
+            </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">3. How We Use Your Data</h2>
-          <p className="mb-4">
-            We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
-          </p>
-          <ul className="list-disc pl-6 mb-4 space-y-2">
-            <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
-            <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
-            <li>Where we need to comply with a legal or regulatory obligation.</li>
-          </ul>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">4. Data Security</h2>
-          <p className="mb-4">
-            We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">5. Contact Us</h2>
-          <p className="mb-4">
-            If you have any questions about this privacy policy or our privacy practices, please contact us at support@notebean.com.
-          </p>
-        </section>
+            {/* Sidebar Navigation - Right Side */}
+            <aside className="hidden lg:block w-64 shrink-0 self-start">
+              <div className="sticky top-28 space-y-6">
+                <div className="border-l-2 border-accent pl-6">
+                  <h3 className="text-sm font-bold text-accent uppercase tracking-wider mb-6">Contents</h3>
+                  <nav className="flex flex-col gap-4">
+                    {privacyPolicy.sections.map((section) => (
+                      <a
+                        key={section.id}
+                        href={`#${section.slug}`}
+                        onClick={(e) => scrollToSection(e, section.slug)}
+                        className="text-[15px] text-text-secondary hover:text-primary transition-colors duration-200 block py-1"
+                      >
+                        {section.title.split('. ')[1] || section.title}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
       </div>
     </div>
   );

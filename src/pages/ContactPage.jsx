@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +14,6 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
     console.log('Form submitted:', formData);
     alert('Thank you for your message. We will get back to you shortly!');
     setFormData({ name: '', email: '', subject: '', message: '' });
@@ -22,7 +21,8 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen w-full bg-white">
-      <div className="container mx-auto px-8 py-16 lg:px-8 max-w-3xl pt-32">
+      <div className="container mx-auto py-16 pt-32">
+
         <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">Get in Touch</h1>
         <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -31,9 +31,9 @@ const ContactPage = () => {
         </p>
       </div>
 
-        <div className="flex flex-col md:flex-row md:items-center md:justify-center w-full gap-4">
+        <div className="flex-1 px-6 flex flex-col md:flex-row md:items-center md:justify-center w-full gap-32">
         {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-8 max-w-xl">
           <div>
             <h3 className="text-2xl font-semibold text-text-primary mb-4">Contact Information</h3>
             <p className="text-text-secondary mb-6">
@@ -82,7 +82,7 @@ const ContactPage = () => {
         </div>
 
         {/* Contact Form */}
-          <div className="bg-gradient-to-br from-accent/80 to-accent/10 rounded-2xl p-8 shadow-md">
+          <div className="flex-1 bg-gradient-to-br from-accent/80 to-accent/10 rounded-2xl p-8 shadow-md">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">Full Name</label>

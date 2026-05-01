@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -37,8 +36,8 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-text-primary">Product</h4>
               <ul className="space-y-2">
-                <li><a href="#features" className="text-text-secondary hover:text-primary transition-colors">Features</a></li>
-                <li><a href="#pricing" className="text-text-secondary hover:text-primary transition-colors">Pricing</a></li>
+                <li><Link to="/#features" className="text-text-secondary hover:text-primary transition-colors">Features</Link></li>
+                <li><Link to="/#pricing" className="text-text-secondary hover:text-primary transition-colors">Pricing</Link></li>
               </ul>
             </div>
 

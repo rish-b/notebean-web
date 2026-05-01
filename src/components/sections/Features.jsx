@@ -79,7 +79,7 @@ const Features = () => {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden" id="features">
+    <section className="relative py-24 bg-white overflow-hidden" id="features">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">

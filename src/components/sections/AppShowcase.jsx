@@ -4,19 +4,17 @@ import { highlights } from '../../constant';
 
 const AppShowcase = () => {
   return (
-    <section className="relative bg-accent lg:bg-transparent overflow-hidden" id="app-showcase">
+    <section className="relative bg-accent py-20 lg:py-32 overflow-hidden" id="app-showcase">
       {/* Background SVG */}
       <img
         src={featBg}
         alt=""
-        aria-hidden="true"
-        className="hidden md:block absolute inset-0 w-full h-full object-cover object-top z-0 pointer-events-none select-none"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover object-top z-0"
       />
 
-      <div className="relative z-10 container mx-auto px-8 md:px-4 py-8 lg:py-16">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
+      <div className="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-center">
           {/* ── LEFT: Text content ── */}
-          <div className="flex-1 max-w-xl lg:mt-16 lg:mx-0 mx-8">
+          <div className="flex-1 relative mx-auto md:px-0">
             <h2 className="text-center lg:text-left text-4xl md:text-5xl font-extrabold text-text-primary leading-tight mb-6">
               Use Notebean on{' '}
               <span className="text-primary">Android or iOS</span>{' '}
@@ -27,7 +25,7 @@ const AppShowcase = () => {
               Notebean keeps your thoughts organised and beautiful across every device.
             </p>
 
-            <ul className="space-y-2">
+            <ul className="flex flex-col lg:gap-8 gap-4">
               {highlights.map(({ Icon, title, description }) => (
                 <li key={title} className="flex items-start gap-3">
                   {/* Icon bubble */}
@@ -44,19 +42,18 @@ const AppShowcase = () => {
           </div>
 
           {/* ── RIGHT: Two upright phones ── */}
-          <div className="flex-1 flex items-end justify-center mb-6 lg:mb-0 lg:mt-0 min-h-[300px] lg:min-h-[580px]">
-            <div className="relative">
+          <div className="relative flex-1 flex items-center justify-center mb-20 lg:mb-0">
               {/* Big phone — base element */}
               <img
                 src={sidePhone}
                 alt="Notebean app screen"
-                className="object-contain drop-shadow-2xl relative"
+                className="object-contain drop-shadow-2xl "
                 style={{
                   width: 'clamp(200px, 40vw, 230px)',
                   zIndex: 1,
                 }}
               />
-              {/* Small phone — absolutely placed, right edge at big phone's center, bottom slightly lower */}
+              {/* Small phone */}
               <img
                 src={sidePhone}
                 alt="Notebean app screen"
@@ -68,10 +65,7 @@ const AppShowcase = () => {
                   zIndex: 2,
                 }}
               />
-            </div>
           </div>
-
-        </div>
       </div>
     </section>
   );

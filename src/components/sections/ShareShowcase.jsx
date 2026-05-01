@@ -25,13 +25,12 @@ const socialIcons = [
 
 const ShareShowcase = () => {
   return (
-    <section className="bg-white overflow-hidden py-16" id="share-showcase">
+    <section className="relative bg-white overflow-hidden" id="share-showcase">
 
-      <div className="container mx-auto px-8 md:px-4 py-8 lg:py-16">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-14 lg:gap-40">
+      <div className="container mx-auto px-6 md:px-4 py-8 lg:py-16 flex flex-col lg:flex-row items-center justify-around gap-8">
 
           {/* ── LEFT: Decorative SVG image ── */}
-          <div className="flex items-center justify-end">
+          <div className="flex items-center">
             <img
               src={featBg2}
               alt="Share illustration"
@@ -60,8 +59,6 @@ const ShareShowcase = () => {
               ))}
             </div>
           </div>
-
-        </div>
       </div>
     </section>
   );

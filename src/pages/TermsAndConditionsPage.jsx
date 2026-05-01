@@ -1,64 +1,77 @@
-import React from 'react';
+import { termsAndConditions } from '../constant/legal';
 
 const TermsAndConditionsPage = () => {
+  const scrollToSection = (e, slug) => {
+    e.preventDefault();
+    const element = document.getElementById(slug);
+    if (element) {
+      const offset = 100; // Account for fixed navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div className="container mx-auto px-6 py-16 lg:px-8 max-w-4xl pt-32">
-      <h1 className="text-4xl font-bold text-text-primary mb-8">Terms and Conditions</h1>
-      
-      <div className="prose prose-lg text-text-secondary">
-        <p className="mb-6">Last updated: {new Date().toLocaleDateString()}</p>
-        
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">1. Agreement to Terms</h2>
-          <p className="mb-4">
-            By accessing or using NoteBean's services, you agree to be bound by these Terms and Conditions. 
-            If you disagree with any part of the terms, then you may not access the service.
-          </p>
-        </section>
+    <div className="pt-32 bg-accent w-full max-h-screen">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">Terms and Conditions</h1>
+        <p className="text-lg text-text-secondary max-w-2xl mx-auto px-6">
+          These Terms govern your use of our website and services. By using our Services, you agree to these Terms.
+        </p>
+      </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">2. Use License</h2>
-          <p className="mb-4">
-            Permission is granted to temporarily download one copy of the materials (information or software) on 
-            NoteBean's website for personal, non-commercial transitory viewing only. This is the grant of a license, 
-            not a transfer of title, and under this license you may not:
-          </p>
-          <ul className="list-disc pl-6 mb-4 space-y-2">
-            <li>modify or copy the materials;</li>
-            <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-            <li>attempt to decompile or reverse engineer any software contained on NoteBean's website;</li>
-            <li>remove any copyright or other proprietary notations from the materials; or</li>
-            <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
-          </ul>
-        </section>
+      <div className='bg-white rounded-t-[3rem] shadow-2xl'>
+        <div className="container mx-auto px-6 py-16 lg:px-8 max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-12 relative">
+            
+            {/* Main Content */}
+            <div className="flex-1 text-text-secondary ">
+              <p className="mb-8 font-medium italic">Last updated: {termsAndConditions.lastUpdated}</p>
+              
+              {termsAndConditions.sections.map((section) => (
+                <section key={section.id} id={section.slug} className="mb-12 scroll-mt-32">
+                  <h2 className="text-2xl font-bold text-text-primary mb-5">{section.title}</h2>
+                  <p className="mb-4 leading-relaxed">{section.content}</p>
+                  {section.list && (
+                    <ul className="list-disc pl-6 mb-4 space-y-3">
+                      {section.list.map((item, index) => (
+                        <li key={index} className="leading-relaxed">{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              ))}
+            </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">3. Disclaimer</h2>
-          <p className="mb-4">
-            The materials on NoteBean's website are provided on an 'as is' basis. NoteBean makes no warranties, 
-            expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, 
-            implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement 
-            of intellectual property or other violation of rights.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">4. Limitations</h2>
-          <p className="mb-4">
-            In no event shall NoteBean or its suppliers be liable for any damages (including, without limitation, 
-            damages for loss of data or profit, or due to business interruption) arising out of the use or inability 
-            to use the materials on NoteBean's website, even if NoteBean or a NoteBean authorized representative has 
-            been notified orally or in writing of the possibility of such damage.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-text-primary mb-4">5. Governing Law</h2>
-          <p className="mb-4">
-            These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction 
-            in which NoteBean is established, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.
-          </p>
-        </section>
+            {/* Sidebar Navigation - Right Side */}
+            <aside className="hidden lg:block w-64 flex-shrink-0">
+              <div className="sticky top-28 space-y-6">
+                <div className="border-l-2 border-accent pl-6">
+                  <h3 className="text-sm font-bold text-accent uppercase tracking-wider mb-6">Contents</h3>
+                  <nav className="flex flex-col gap-4">
+                    {termsAndConditions.sections.map((section) => (
+                      <a
+                        key={section.id}
+                        href={`#${section.slug}`}
+                        onClick={(e) => scrollToSection(e, section.slug)}
+                        className="text-[15px] text-text-secondary hover:text-primary transition-colors duration-200 block py-1"
+                      >
+                        {section.title.split('. ')[1] || section.title}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
       </div>
     </div>
   );
