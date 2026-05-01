@@ -128,3 +128,59 @@ export const highlights = [
       'Switch devices mid-thought. Auto Sync keeps every word, sketch, and sticky note perfectly in step.',
   },
 ];
+
+export const plans = [
+    {
+      name: 'Free',
+      monthlyPrice: '$0',
+      yearlyPrice: '$0',
+      description: 'Perfect for getting started with organized note-taking.',
+      features: [
+        { name: 'Small ad banners', included: true },
+        { name: 'Up to 50 notes', included: true },
+        { name: 'Advanced formatting', included: true },
+        { name: '7 days auto sync', included: true },
+        { name: 'Standard support', included: true },
+        { name: 'AI Summaries', included: false },
+        { name: 'Unlimited attachments', included: false },
+      ],
+      popular: false,
+    },
+    {
+      name: 'Pro',
+      monthlyPrice: '$9',
+      yearlyPrice: '$89',
+      description: 'Unlock the full power of Notebean with advanced features.',
+      features: [
+        { name: 'Ad Free', included: true },
+        { name: 'Unlimited notes', included: true },
+        { name: 'Advanced formatting', included: true },
+        { name: 'Unlimited devices', included: true },
+        { name: 'Unlimited Manual Sync', included: true },
+        { name: 'Priority 24/7 support', included: true },
+        { name: 'AI-Powered Summaries', included: true },
+        { name: 'Real-time collaboration', included: true },
+      ],
+      cta: 'Go Pro',
+      popular: true,
+    },
+  ];
+
+  export const faqs = [
+    {
+      question: 'Can I switch plans later?',
+      answer: 'Absolutely! You can upgrade or downgrade your plan at any time from your account settings. Changes take effect immediately.',
+    },
+    {
+      question: 'What happens if I cancel my Pro subscription?',
+      answer: 'Your account will revert to the Free plan at the end of your billing cycle. Your existing notes will remain safe, but you won\'t be able to add new ones if you\'ve exceeded the Free limit.',
+    },
+    {
+      question: 'Is my data secure?',
+      answer: 'Yes, we use industry-standard end-to-end encryption for all your notes. Only you can access your data.',
+    },
+    {
+      question: 'Do you offer a student discount?',
+      answer: 'Yes! Students with a valid .edu email address can get 50% off our annual Pro plan. Contact our support team to apply.',
+    },
+  ];

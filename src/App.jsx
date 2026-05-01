@@ -5,6 +5,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import ContactPage from './pages/ContactPage';
 import ScrollToTop from './components/layout/ScrollToTop';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsAndConditionsPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          {/* Add more routes as needed */}
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="*" element={<div>404 - Not Found</div>} />
         </Routes>
       </Layout>

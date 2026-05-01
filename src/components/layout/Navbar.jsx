@@ -1,11 +1,22 @@
 import  { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../../assets/images/notebean_logo_without_bg.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    const element = document.getElementById('get-started');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/#get-started');
+    }
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +77,10 @@ const Navbar = () => {
               ))}
             </div>
 
-            <button className="px-7 py-2.5 rounded-full bg-primary text-white font-bold text-sm hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+            <button 
+              onClick={handleGetStarted}
+              className="px-7 py-2.5 rounded-full bg-primary text-white font-bold text-sm hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
+            >
               Get Started
             </button>
           </div>
@@ -102,7 +116,10 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-          <button className="mt-4 px-10 py-2 rounded-full bg-primary text-white font-bold text-md shadow-xl hover:bg-secondary transition-all active:scale-95">
+          <button 
+            onClick={handleGetStarted}
+            className="mt-4 px-10 py-2 rounded-full bg-primary text-white font-bold text-md shadow-xl hover:bg-secondary transition-all active:scale-95"
+          >
             Get Started
           </button>
         </div>

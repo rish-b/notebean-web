@@ -27,7 +27,7 @@ const CTA = () => {
   }, []);
 
   return (
-    <section className="relative bg-accent pt-20 md:pt-0">
+    <section id="get-started" className="relative bg-accent pt-20 md:pt-0">
 
       <div className="relative container mx-auto px-6 flex flex-col lg:flex-row items-center justify-around gap-12">
 
@@ -43,7 +43,7 @@ const CTA = () => {
           <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
             {/* iOS Button */}
             <Link
-              href="#"
+              to="#"
               className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-primary text-white font-semibold hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 shadow-md"
             >
               <svg className="w-7 h-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -57,7 +57,7 @@ const CTA = () => {
 
             {/* Android Button */}
             <Link
-              href="#"
+              to="#"
               className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl border-2 border-primary text-black font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
             >
               <svg className="w-7 h-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
