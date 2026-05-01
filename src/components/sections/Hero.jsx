@@ -7,6 +7,7 @@ import {
 import bgImage from '../../assets/images/bg_image.svg';
 import heroMockupReady from '../../assets/images/hero_mockup_ready1.svg';
 import { noteItems, deviceItems } from '../../constant'
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const Hero = () => {
 
             <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
               {/* iOS Button */}
-              <a
+              <Link
                 href="#"
                 className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-primary text-white font-semibold hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 shadow-md"
               >
@@ -65,10 +66,10 @@ const Hero = () => {
                   <div className="text-[11px] opacity-80 font-normal">Download on the</div>
                   <div className="text-base font-bold">App Store</div>
                 </div>
-              </a>
+              </Link>
 
               {/* Android Button */}
-              <a
+              <Link
                 href="#"
                 className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl border-2 border-primary text-black font-semibold hover:bg-primary hover:text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95"
               >
@@ -79,7 +80,7 @@ const Hero = () => {
                   <div className="text-[11px] opacity-70 font-normal">Get it on</div>
                   <div className="text-base font-bold">Google Play</div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
