@@ -1,14 +1,16 @@
 import { Check, X, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 import { plans, faqs } from '../constant';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState('monthly');
   const [openFaq, setOpenFaq] = useState(null);
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-surface pt-32 pb-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <div className="min-h-screen bg-accent pt-32">
+
         {/* Header Section */}
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl md:text-5xl font-extrabold text-text-primary tracking-tight">
@@ -17,6 +19,10 @@ const Pricing = () => {
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
             Choose the plan that works best for your productivity workflow. No hidden fees.
           </p>
+      </div>
+
+      <div className='bg-surface w-full pb-20 rounded-t-[3rem] '>
+        <div className="container mx-auto max-w-6xl">
 
           {/* Monthly/Yearly Toggle */}
           <div className="flex items-center justify-center pt-8">
@@ -43,10 +49,9 @@ const Pricing = () => {
               </button>
             </div>
           </div>
-        </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -153,9 +158,10 @@ const Pricing = () => {
             <p className="text-text-secondary/80 max-w-xl mx-auto">
               Our support team is here to help you choose the best plan for your needs.
             </p>
-            <button className="px-10 py-4 bg-white text-text-primary font-bold rounded-2xl hover:bg-background transition-all duration-300 shadow-xl active:scale-95">
+              <button onClick={() => navigate('/contact')} className="px-10 py-4 bg-white text-text-primary font-bold rounded-2xl hover:bg-background transition-all duration-300 shadow-xl active:scale-95">
               Contact Support
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>

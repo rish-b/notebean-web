@@ -4,7 +4,7 @@ import {
   Moon,
   RefreshCw,
 } from 'lucide-react';
-import bgImage from '../../assets/images/bg_image.svg';
+// import bgImage from '../../assets/images/bg_image.svg';
 import heroMockupReady from '../../assets/images/hero_mockup_ready1.svg';
 import { noteItems, deviceItems } from '../../constant'
 import { Link } from 'react-router-dom';
@@ -33,17 +33,17 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen h-auto lg:h-screen overflow-hidden pt-24">
+    <section className="min-h-screen h-full lg:h-screen pt-24 md:pt-12 pb-20 md:pb-0" style={{ backgroundImage: `url('/bg_image.svg')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
       {/* Background */}
-      <img
+      {/* <img
         src={bgImage}
         alt="Background Image"
         className="absolute inset-0 w-full h-full object-cover z-0"
-      />
+      /> */}
 
-      <div className='mx-auto px-6 container flex flex-col lg:flex-row items-center justify-center'>
+      <div className='mx-auto px-6 container flex flex-col lg:flex-row items-center justify-center h-full'>
        {/* ── LEFT: Text content ── */}
-      <div className="flex-1 relative mx-auto md:px-0 text-center lg:text-left">
+        <div className="flex-1 relative mx-auto md:px-0 text-center lg:text-left md:mb-0 mb-12">
           <div className="max-w-2xl text-text-primary flex flex-col items-center lg:items-start">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
               Your Brain, Optimized.
@@ -86,10 +86,11 @@ const Hero = () => {
         </div>
 
         {/* Right Content — Mockup + Floating Cards */}
-        <div className="relative flex-1 flex items-center justify-center z-20 mt-12 lg:mt-0">
+        <div className="relative flex-1 flex items-center justify-center z-20 lg:mt-0">
             <img
               src={heroMockupReady}
               alt="Hero Mockup"
+            className='w-[100%] h-[100%] md:w-[70%] md:h-[70%]'  
             />
 
             {/*Card 1: Quick Create*/}

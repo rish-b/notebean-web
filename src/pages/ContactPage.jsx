@@ -8,19 +8,48 @@ const ContactPage = () => {
     subject: '',
     message: ''
   });
+  const [loading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message. We will get back to you shortly!');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
 
- 
+    try {
+      setIsLoading(true)
+      const response = await fetch(
+        import.meta.env.VITE_GOOGLE_SCRIPT_URL,
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+
+        alert("Message sent successfully!");
+
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message");
+    } finally {
+      setIsLoading(false)
+    }
+  };
 
   return (
     <div className="pt-32 bg-accent w-full min-h-screen">
@@ -121,9 +150,10 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 rounded-xl bg-primary hover:bg-secondary text-white font-bold transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95"
+                  disabled={loading}
+                  className="w-full py-4 px-6 rounded-xl bg-primary hover:bg-secondary text-white font-bold transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>

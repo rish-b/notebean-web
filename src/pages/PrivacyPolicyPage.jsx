@@ -97,7 +97,7 @@ const PrivacyPolicyPage = () => {
         </div>
       </div>
 
-      <div className={`hidden lg:block fixed ${isScrolled ? 'top-[15%]' : 'top-[40%]'} right-[calc((100vw-80rem)/2)] w-64 z-50`}>
+      <div className={`hidden lg:block fixed ${isScrolled ? 'top-[15%]' : 'top-[50%]'} right-[calc((100vw-80rem)/2)] w-64 z-0`}>
         <div className="space-y-6 bg-white border-l-2 border-accent pl-6 py-4">
 
           <h3 className="text-sm font-bold text-accent uppercase tracking-wider mb-4">

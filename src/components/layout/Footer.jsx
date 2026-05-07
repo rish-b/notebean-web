@@ -3,7 +3,7 @@ import logo from '../../assets/images/notebean_logo_without_bg.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-surface py-12">
+    <footer className="relative z-10 bg-background border-t border-surface py-12">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-start gap-8">
 

@@ -25,7 +25,7 @@ const socialIcons = [
 
 const ShareShowcase = () => {
   return (
-    <section className="relative bg-white overflow-hidden" id="share-showcase">
+    <section className="relative bg-white overflow-hidden py-12 md:py-0" id="share-showcase">
 
       <div className="container mx-auto px-6 md:px-4 py-8 lg:py-16 flex flex-col lg:flex-row items-center justify-around gap-8">
 
