@@ -1,15 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Sun,
   Moon,
   RefreshCw,
 } from 'lucide-react';
-// import bgImage from '../../assets/images/bg_image.svg';
-import heroMockupReady from '../../assets/images/hero_mockup_ready1.svg';
+// import heroMockupReady from '../../assets/images/hero_mockup_ready1.svg';
+import homePageDark from '../../assets/images/homepage-dark.png';
+import homePageLight from '../../assets/images/homepage-light.png';
 import { noteItems, deviceItems } from '../../constant'
 import { Link } from 'react-router-dom';
+import Tooltip from '../ui/Tooltip';
 
 const Hero = () => {
+  const [isDark, setIsDark] = useState(true);
+
   useEffect(() => {
     const style = document.createElement('style');
     style.id = 'hero-float-keyframes';
@@ -33,7 +37,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen h-full lg:h-screen pt-24 md:pt-12 pb-20 md:pb-0" style={{ backgroundImage: `url('/bg_image.svg')`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+    <section className="relative min-h-screen pt-24 md:pt-32 pb-20 bg-no-repeat bg-cover bg-bottom" style={{ backgroundImage: `url('/bg_image.svg')` }}>
       {/* Background */}
       {/* <img
         src={bgImage}
@@ -41,7 +45,7 @@ const Hero = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
       /> */}
 
-      <div className='mx-auto px-6 container flex flex-col lg:flex-row items-center justify-center h-full'>
+      <div className='mx-auto px-6 container flex flex-col lg:flex-row items-center justify-center min-h-[calc(100vh-120px)]'>
        {/* ── LEFT: Text content ── */}
         <div className="flex-1 relative mx-auto md:px-0 text-center lg:text-left md:mb-0 mb-12">
           <div className="max-w-2xl text-text-primary flex flex-col items-center lg:items-start">
@@ -55,18 +59,19 @@ const Hero = () => {
 
             <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
               {/* iOS Button */}
-              <Link
-                to="#"
-                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-primary text-white font-semibold hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 shadow-md"
-              >
-                <svg className="w-7 h-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                </svg>
-                <div className="text-left leading-tight">
-                  <div className="text-[11px] opacity-80 font-normal">Download on the</div>
-                  <div className="text-base font-bold">App Store</div>
+              <Tooltip text="We'll be here soon!" position="bottom">
+                <div
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-primary text-white font-semibold hover:bg-secondary transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 shadow-md cursor-pointer"
+                >
+                  <svg className="w-7 h-7 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                  </svg>
+                  <div className="text-left leading-tight">
+                    <div className="text-[11px] opacity-80 font-normal">Download on the</div>
+                    <div className="text-base font-bold">App Store</div>
+                  </div>
                 </div>
-              </Link>
+              </Tooltip>
 
               {/* Android Button */}
               <Link
@@ -88,7 +93,7 @@ const Hero = () => {
         {/* Right Content — Mockup + Floating Cards */}
         <div className="relative flex-1 flex items-center justify-center z-20 lg:mt-0">
             <img
-              src={heroMockupReady}
+            src={isDark ? homePageDark : homePageLight}
               alt="Hero Mockup"
             className='w-[100%] h-[100%] md:w-[70%] md:h-[70%]'  
             />
@@ -129,16 +134,19 @@ const Hero = () => {
               }}
             >
               <div className="backdrop-blur-xl bg-white/20 border border-white/30 rounded-xl p-2 sm:p-3 shadow-2xl shadow-black/15 flex flex-col gap-2 sm:gap-2.5 w-28 sm:w-40 scale-85 sm:scale-100">
-                <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-purple-700 mb-0.5">
-                  Appearance
-                </p>
-                <div className="flex rounded-lg overflow-hidden border border-black/10">
-                  <div className="flex-1 flex flex-col items-center gap-1 py-2 bg-white/80 text-gray-800 text-[9px] sm:text-[11px] font-semibold">
-                    <Sun size={11} strokeWidth={2} className="shrink-0 text-yellow-700" />
+              <p className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest text-purple-700">
+                Appearance
+              </p>
+              <p className="text-[10px] text-text-primary/50 text-center">
+                Tap to preview themes
+              </p>
+              <div className="flex rounded-lg overflow-hidden border border-black/10 cursor-pointer">
+                <div className={`flex-1 flex flex-col items-center gap-1 py-2 bg-white/80 text-gray-800 text-[9px] sm:text-[11px] font-semibold`} onClick={() => setIsDark(false)}>
+                  <Sun size={11} strokeWidth={2} className="shrink-0 text-yellow-700" />
                     Light
                   </div>
-                  <div className="flex-1 flex flex-col items-center gap-1 py-2 bg-gray-900/80 text-white text-[9px] sm:text-[11px] font-semibold">
-                    <Moon size={11} strokeWidth={2} className="shrink-0 text-blue-500" />
+                <div className={`flex-1 flex flex-col items-center gap-1 py-2 bg-gray-900/80 text-white text-[9px] sm:text-[11px] font-semibold`} onClick={() => setIsDark(true)}>
+                  <Moon size={11} strokeWidth={2} className="shrink-0 text-blue-500" />
                     Dark
                   </div>
                 </div>

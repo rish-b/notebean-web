@@ -14,7 +14,7 @@ const AppShowcase = () => {
 
       <div className="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-center">
           {/* ── LEFT: Text content ── */}
-          <div className="flex-1 relative mx-auto md:px-0">
+        <div className="flex-1 relative mx-auto md:px-0">
             <h2 className="text-center lg:text-left text-4xl md:text-5xl font-extrabold text-text-primary leading-tight mb-6">
               Use Notebean on{' '}
               <span className="text-primary">Android or iOS</span>{' '}
@@ -42,28 +42,11 @@ const AppShowcase = () => {
           </div>
 
           {/* ── RIGHT: Two upright phones ── */}
-          <div className="relative flex-1 flex items-center justify-center mb-20 lg:mb-0">
-              {/* Big phone — base element */}
+        <div className="w-full flex-1 flex items-center justify-end mb-20 lg:mb-0">
               <img
                 src={sidePhone}
                 alt="Notebean app screen"
-                className="object-contain drop-shadow-2xl "
-                style={{
-                  width: 'clamp(200px, 40vw, 230px)',
-                  zIndex: 1,
-                }}
-              />
-              {/* Small phone */}
-              <img
-                src={sidePhone}
-                alt="Notebean app screen"
-                className="object-contain drop-shadow-2xl absolute"
-                style={{
-                  width: 'clamp(160px, 32vw, 180px)',
-                  bottom: '-12px',
-                  right: '50%',
-                  zIndex: 2,
-                }}
+            className="object-contain drop-shadow-2xl w-180px lg:w-[400px] z-1"
               />
           </div>
       </div>

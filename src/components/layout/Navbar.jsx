@@ -1,7 +1,7 @@
 import  { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../../assets/images/notebean_logo_without_bg.png';
+import logo from '../../assets/images/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Features', path: '/#features' },
-    { name: 'Pricing', path: '/pricing' },
+    // { name: 'Pricing', path: '/pricing' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -48,7 +48,7 @@ const Navbar = () => {
               <img 
                 src={logo} 
                 alt="Notebean Logo" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain rounded-full"
               />
             </div>
             <span className="text-2xl font-bold tracking-tight transition-colors duration-300 text-text-primary">

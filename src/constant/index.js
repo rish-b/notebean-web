@@ -1,4 +1,4 @@
-import { Bell, FilePen, Image as ImageIcon, Laptop, Layout, ListChecks, Mail, MapPin, Moon, Palette, PenSquare, Phone, Radio, RefreshCw, RefreshCwIcon, Search, ShieldOff, Smartphone, SmartphoneIcon, Smile, Sparkles, Tablet, Trophy, WifiOff, WifiOffIcon } from "lucide-react";
+import { Bell, Clock, FilePen, Image as ImageIcon, Laptop, Layout, ListChecks, Mail, Moon, Palette, PenSquare, Radio, RefreshCw, RefreshCwIcon, Search, Shield, ShieldOff, Smartphone, SmartphoneIcon, Smile, Sparkles, Tablet, Trophy, WifiOff, WifiOffIcon } from "lucide-react";
 
 export const features = [
 // ... (rest of the features array)
@@ -113,7 +113,7 @@ export const highlights = [
     Icon: WifiOffIcon,
     title: 'Works Offline, Always',
     description:
-      'No Wi-Fi? No problem. Jot down ideas anywhere and Notebean syncs the moment you`re back online.',
+      'No Wi-Fi? No problem. Note down ideas anywhere and Notebean syncs the moment you`re back online.',
   },
   {
     Icon: SmartphoneIcon,
@@ -185,20 +185,20 @@ export const plans = [
     },
   ];
 
-   export const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      detail: 'organimind8@gmail.com',
+export const contactInfo = [
+  {
+    icon: Mail,
+    title: 'Email',
+    detail: 'info@organimind.com',
     },
     {
-      icon: MapPin,
-      title: 'Office',
-      detail: 'Bhavnagar, Gujarat 364001',
+      icon: Clock,
+      title: 'Support Hours',
+      detail: 'Mon - Fri | 10 AM - 7 PM',
     },
     {
-      icon: Phone,
-      title: 'Phone',
-      detail: '+91 9913863602',
+      icon: Shield,
+      title: 'Privacy First',
+      detail: 'Your data stays secure & encrypted',
     },
   ];
