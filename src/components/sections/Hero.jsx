@@ -127,7 +127,7 @@ const Hero = () => {
 
             {/* Card 2: Appearance */}
             <div
-            className="pointer-events-auto absolute top-[8%] left-[72%] lg:top-[14%] lg:left-[70%]"
+            className="pointer-events-auto absolute top-[8%] left-[73%] lg:top-[14%] lg:left-[70%]"
               style={{
                 animation: 'floatB 6s ease-in-out infinite',
                 animationDelay: '0.6s',
@@ -161,7 +161,7 @@ const Hero = () => {
 
             {/*Card 3: Sync Status */}
             <div
-            className="pointer-events-auto absolute bottom-[10%] left-[72%] lg:bottom-[20%] lg:left-[70%] lg:right-auto"
+            className="pointer-events-auto absolute bottom-[10%] left-[73%] lg:bottom-[20%] lg:left-[70%] lg:right-auto"
               style={{
                 animation: 'floatA 7s ease-in-out infinite',
                 animationDelay: '1.2s',
